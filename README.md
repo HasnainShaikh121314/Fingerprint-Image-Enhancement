@@ -20,6 +20,30 @@ The output is intended for:
 
 ---
 
+## Results: Original vs Enhanced Fingerprint
+
+The following comparison demonstrates the transformation of a raw fingerprint image into a scanner-style fingerprint using the proposed enhancement pipeline.
+
+The processing includes grayscale conversion, CLAHE, PyFing GBFEN enhancement, adaptive thresholding, ridge rendering, and scanner-style formatting.
+
+### Visual Comparison
+
+| Original Fingerprint | Enhanced Fingerprint (500 DPI Export) |
+|:--------------------:|:-------------------------------------:|
+| ![Original Fingerprint](sample/right-index.png) | ![Enhanced Fingerprint](output/scanner_style_500dpi/right-index_scanner_style_500dpi.png) |
+
+**Input:** Raw fingerprint image.
+
+**Output:** Enhanced fingerprint rendered in scanner style with 500 DPI metadata.
+
+### Processing Workflow
+
+Raw Fingerprint → Grayscale → CLAHE → PyFing GBFEN → Scanner-Style Conversion → 500 DPI PNG Export
+
+**Note:** The 500 DPI export adds DPI metadata without changing the original pixel dimensions.
+
+---
+
 # Features
 
 * Batch image processing
@@ -233,7 +257,7 @@ SOFTEN_RADIUS = 0.6
 Run:
 
 ```bash
-python pipeline.py
+fingerprint_enhancement_pipeline.py
 ```
 
 Example:
